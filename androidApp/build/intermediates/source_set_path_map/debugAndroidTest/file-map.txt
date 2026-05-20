@@ -1,0 +1,4 @@
+com.example.cryptoapp.test.androidApp-androidTest-0 C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\build\generated\res\resValues\androidTest\debug
+com.example.cryptoapp.test.androidApp-mergeDebugAndroidTestResources-1 C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.cryptoapp.test.androidApp-mergeDebugAndroidTestResources-2 C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.cryptoapp.test.androidApp-merged_res-3 C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\build\intermediates\merged_res\debugAndroidTest
