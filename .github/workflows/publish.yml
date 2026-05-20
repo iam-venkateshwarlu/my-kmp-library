@@ -23,6 +23,9 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
 
+      - name: Grant execute permission
+        run: chmod +x gradlew
+
       - name: Publish Library
         run: ./gradlew publishToMavenCentral
 
