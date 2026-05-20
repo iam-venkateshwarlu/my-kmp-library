@@ -3,7 +3,13 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.kotlinSerialization)
+
+    id("com.vanniktech.maven.publish") version "0.30.0"
+    signing
 }
+
+group = "io.github.iam-venkateshwarlu"
+version = "1.0.0"
 
 kotlin {
     androidTarget {
