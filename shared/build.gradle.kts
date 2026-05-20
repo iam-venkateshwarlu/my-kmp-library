@@ -53,6 +53,7 @@ kotlin {
 
             implementation(libs.koin.core)
             implementation(libs.lifecycle.viewmodel.compose)
+            implementation(libs.kotlinx.datetime)
         }
 
         androidMain.dependencies {

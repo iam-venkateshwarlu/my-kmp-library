@@ -3,6 +3,7 @@ package api
 import kotlinx.coroutines.delay
 import model.PaymentResult
 import model.PaymentToken
+import kotlinx.datetime.Clock
 
 /**
  * Mock backend API simulating POST /process-payment.
@@ -31,8 +32,8 @@ class MockPaymentApi {
         return if (paymentToken.token.isNotBlank()) {
             PaymentResult(
                 status  = "SUCCESS",
-                txnRef  = "TXN_MOCK_${System.currentTimeMillis()}",
-                message = "Payment of \$${"%.2f".format(amount)} processed successfully."
+                txnRef  = "TXN_MOCK_${Clock.System.now().toEpochMilliseconds()}",
+                message = "Payment of $$amount processed successfully."
             )
         } else {
             PaymentResult(
