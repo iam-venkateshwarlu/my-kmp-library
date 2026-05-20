@@ -150,8 +150,18 @@ mavenPublishing {
 }
 
 signing {
+    val signingKey = providers
+        .gradleProperty("signingKey")
+        .orNull
+
+    val signingPassword = providers
+        .gradleProperty("signingPassword")
+        .orNull
+
     useInMemoryPgpKeys(
-        providers.gradleProperty("signingKey").orNull,
-        providers.gradleProperty("signingPassword").orNull
+        signingKey,
+        signingPassword
     )
+
+    sign(publishing.publications)
 }
