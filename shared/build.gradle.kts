@@ -148,3 +148,10 @@ mavenPublishing {
         }
     }
 }
+
+signing {
+    useInMemoryPgpKeys(
+        providers.gradleProperty("signingKey").orNull,
+        providers.gradleProperty("signingPassword").orNull
+    )
+}
