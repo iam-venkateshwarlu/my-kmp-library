@@ -83,15 +83,11 @@ android {
 
 mavenPublishing {
 
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    publishToMavenCentral(
+        SonatypeHost.CENTRAL_PORTAL
+    )
 
     signAllPublications()
-
-    coordinates(
-        "io.github.iam-venkateshwarlu",
-        "cryptoapp",
-        "1.0.0"
-    )
 
     pom {
 
