@@ -1,3 +1,5 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
@@ -81,9 +83,15 @@ android {
 
 mavenPublishing {
 
-    publishToMavenCentral()
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
     signAllPublications()
+
+    coordinates(
+        "io.github.iam-venkateshwarlu",
+        "cryptoapp",
+        "1.0.0"
+    )
 
     pom {
 
@@ -142,6 +150,4 @@ mavenPublishing {
             )
         }
     }
-
-    // javadocJar()
 }
