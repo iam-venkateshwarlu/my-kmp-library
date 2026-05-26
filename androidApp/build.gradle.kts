@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.googleServices) // Firebase
 }
 
 android {
@@ -34,4 +35,8 @@ dependencies {
     implementation(project(":shared"))
     implementation(libs.androidx.activity.compose)
     implementation(libs.play.services.wallet)  // Google Pay API
+
+    // Firebase — version pinned via BOM so individual artifacts need no version
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.messaging)
 }

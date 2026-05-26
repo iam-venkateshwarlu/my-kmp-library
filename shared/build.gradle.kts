@@ -58,6 +58,9 @@ kotlin {
 
         androidMain.dependencies {
             implementation(libs.ktor.client.android)
+            // Firebase Messaging Android SDK (accessed by NotificationService actual)
+            implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+            implementation("com.google.firebase:firebase-messaging-ktx")
         }
 
         iosMain.dependencies {

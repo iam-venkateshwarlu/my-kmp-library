@@ -10,14 +10,28 @@ import kotlinx.coroutines.launch
 import model.CardDetails
 import model.PaymentToken
 import model.QuoteResponse
+import notification.NotificationService
+import notification.PushNotificationEvent
 import payment.PaymentState
 import payment.PaymentUseCase
 import repository.CryptoRepository
 
 class CryptoViewModel : ViewModel() {
 
-    private val repository     = CryptoRepository(MockBanxaApi())
-    private val paymentUseCase = PaymentUseCase()
+    private val repository          = CryptoRepository(MockBanxaApi())
+    private val paymentUseCase      = PaymentUseCase()
+    private val notificationService = NotificationService()
+
+    // ── Notification State ─────────────────────────────────────────────────────
+
+    /** Non-null when a foreground push notification has been received. */
+    var notificationEvent by mutableStateOf<PushNotificationEvent?>(null)
+        private set
+
+    /** Called by the UI to dismiss the in-app notification banner. */
+    fun dismissNotification() {
+        notificationEvent = null
+    }
 
     // ── Card Management State ──────────────────────────────────────────────────
 
@@ -93,5 +107,23 @@ class CryptoViewModel : ViewModel() {
     /** Resets payment state back to Idle when user dismisses the result card. */
     fun resetPaymentState() {
         paymentState = PaymentState.Idle
+    }
+
+    // ── Firebase Push Notification Initialisation ──────────────────────────────
+
+    init {
+        // Retrieve and log the FCM token once at ViewModel creation
+        notificationService.getToken { token ->
+            if (token != null) {
+                // In production: send `token` to your backend to target this device
+                println("FCMToken: $token")
+            }
+        }
+
+        // Register a foreground message listener — updates notificationEvent state
+        // which the UI observes to show the in-app banner
+        notificationService.listenForMessages { event ->
+            notificationEvent = event
+        }
     }
 }

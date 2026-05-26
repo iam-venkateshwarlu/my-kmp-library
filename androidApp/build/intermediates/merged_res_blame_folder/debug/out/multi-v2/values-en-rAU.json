@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.cryptoapp.androidApp-mergeDebugResources-44:/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "com.example.cryptoapp.androidApp-mergeDebugResources-47:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Samskruti\\.gradle\\caches\\transforms-3\\cb14b552d4f83ae6caff760f5a3bc691\\transformed\\core-1.12.0\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\Samskruti\\.gradle\\caches\\transforms-3\\1e88d46d58572935c1885f46245e9d44\\transformed\\core-1.12.0\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Samskruti\\.gradle\\caches\\transforms-3\\4dec8220a9903d616408b60e17dd91fa\\transformed\\ui-release\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\Samskruti\\.gradle\\caches\\transforms-3\\eda975f69a0e720f2014eb2f75025212\\transformed\\ui-release\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Samskruti\\.gradle\\caches\\transforms-3\\a862f3bb4ed061248a3b3ed8ca71304f\\transformed\\foundation-release\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\Samskruti\\.gradle\\caches\\transforms-3\\daf1754e3c9ac7e3897ddd8ce0613599\\transformed\\foundation-release\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Samskruti\\.gradle\\caches\\transforms-3\\3145c8e77852974ec5c3d6bbc5d1a9a1\\transformed\\play-services-wallet-19.4.0\\res\\values-en-rAU\\values.xml",
+                    "source": "C:\\Users\\Samskruti\\.gradle\\caches\\transforms-3\\86ec83b1a57a736ce7a213c07c83c79d\\transformed\\play-services-wallet-19.4.0\\res\\values-en-rAU\\values.xml",
                     "from": {
                         "startLines": "4,5",
                         "startColumns": "0,0",
@@ -72,7 +72,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Samskruti\\.gradle\\caches\\transforms-3\\07d4df3f57f97f65916e013bc40022d2\\transformed\\material3-release\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "C:\\Users\\Samskruti\\.gradle\\caches\\transforms-3\\4ad3a342ed2281381b8f7579a2653bc6\\transformed\\material3-release\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

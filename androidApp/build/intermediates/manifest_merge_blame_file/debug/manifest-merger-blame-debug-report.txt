@@ -8,183 +8,361 @@
 8        android:minSdkVersion="24"
 9        android:targetSdkVersion="34" />
 10
-11    <queries>
-11-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:4:5-9:15
-12        <intent>
-12-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:5:9-8:18
-13            <action android:name="android.intent.action.VIEW" />
-13-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:6:13-65
-13-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:6:21-62
-14
-15            <data android:scheme="upi" />
-15-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:7:13-42
-15-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:7:19-39
-16        </intent>
-17        <!-- Needs to be explicitly declared on Android R+ -->
-18        <package android:name="com.google.android.apps.maps" />
-18-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\1cde36386c8263c2c6545a74a4b21247\transformed\play-services-maps-18.0.2\AndroidManifest.xml:33:9-64
-18-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\1cde36386c8263c2c6545a74a4b21247\transformed\play-services-maps-18.0.2\AndroidManifest.xml:33:18-61
-19    </queries>
-20    <!-- Include required permissions for Google Maps API to run. -->
-21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-21-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\1cde36386c8263c2c6545a74a4b21247\transformed\play-services-maps-18.0.2\AndroidManifest.xml:23:5-79
-21-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\1cde36386c8263c2c6545a74a4b21247\transformed\play-services-maps-18.0.2\AndroidManifest.xml:23:22-76
-22    <uses-permission android:name="android.permission.INTERNET" />
-22-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\1cde36386c8263c2c6545a74a4b21247\transformed\play-services-maps-18.0.2\AndroidManifest.xml:24:5-67
-22-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\1cde36386c8263c2c6545a74a4b21247\transformed\play-services-maps-18.0.2\AndroidManifest.xml:24:22-64
-23
-24    <uses-feature
-24-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\1cde36386c8263c2c6545a74a4b21247\transformed\play-services-maps-18.0.2\AndroidManifest.xml:26:5-28:35
-25        android:glEsVersion="0x00020000"
-25-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\1cde36386c8263c2c6545a74a4b21247\transformed\play-services-maps-18.0.2\AndroidManifest.xml:27:9-41
-26        android:required="true" />
-26-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\1cde36386c8263c2c6545a74a4b21247\transformed\play-services-maps-18.0.2\AndroidManifest.xml:28:9-32
-27
-28    <permission
-28-->[androidx.core:core:1.12.0] C:\Users\Samskruti\.gradle\caches\transforms-3\cb14b552d4f83ae6caff760f5a3bc691\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
-29        android:name="com.example.cryptoapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-29-->[androidx.core:core:1.12.0] C:\Users\Samskruti\.gradle\caches\transforms-3\cb14b552d4f83ae6caff760f5a3bc691\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
-30        android:protectionLevel="signature" />
-30-->[androidx.core:core:1.12.0] C:\Users\Samskruti\.gradle\caches\transforms-3\cb14b552d4f83ae6caff760f5a3bc691\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
-31
-32    <uses-permission android:name="com.example.cryptoapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-32-->[androidx.core:core:1.12.0] C:\Users\Samskruti\.gradle\caches\transforms-3\cb14b552d4f83ae6caff760f5a3bc691\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
-32-->[androidx.core:core:1.12.0] C:\Users\Samskruti\.gradle\caches\transforms-3\cb14b552d4f83ae6caff760f5a3bc691\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+11    <!-- Android 13+ requires explicit POST_NOTIFICATIONS permission -->
+12    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+12-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:5:5-77
+12-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:5:22-74
+13
+14    <queries>
+14-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:7:5-12:15
+15        <intent>
+15-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:8:9-11:18
+16            <action android:name="android.intent.action.VIEW" />
+16-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:9:13-65
+16-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:9:21-62
+17
+18            <data android:scheme="upi" />
+18-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:10:13-42
+18-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:10:19-39
+19        </intent>
+20        <!-- Needs to be explicitly declared on Android R+ -->
+21        <package android:name="com.google.android.apps.maps" />
+21-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\231d78b8fffc521c9f58b8fa826600d4\transformed\play-services-maps-18.0.2\AndroidManifest.xml:33:9-64
+21-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\231d78b8fffc521c9f58b8fa826600d4\transformed\play-services-maps-18.0.2\AndroidManifest.xml:33:18-61
+22    </queries>
+23    <!-- Include required permissions for Google Maps API to run. -->
+24    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+24-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\231d78b8fffc521c9f58b8fa826600d4\transformed\play-services-maps-18.0.2\AndroidManifest.xml:23:5-79
+24-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\231d78b8fffc521c9f58b8fa826600d4\transformed\play-services-maps-18.0.2\AndroidManifest.xml:23:22-76
+25    <uses-permission android:name="android.permission.INTERNET" />
+25-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\231d78b8fffc521c9f58b8fa826600d4\transformed\play-services-maps-18.0.2\AndroidManifest.xml:24:5-67
+25-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\231d78b8fffc521c9f58b8fa826600d4\transformed\play-services-maps-18.0.2\AndroidManifest.xml:24:22-64
+26
+27    <uses-feature
+27-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\231d78b8fffc521c9f58b8fa826600d4\transformed\play-services-maps-18.0.2\AndroidManifest.xml:26:5-28:35
+28        android:glEsVersion="0x00020000"
+28-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\231d78b8fffc521c9f58b8fa826600d4\transformed\play-services-maps-18.0.2\AndroidManifest.xml:27:9-41
+29        android:required="true" />
+29-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\231d78b8fffc521c9f58b8fa826600d4\transformed\play-services-maps-18.0.2\AndroidManifest.xml:28:9-32
+30
+31    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+31-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:24:5-68
+31-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:24:22-65
+32    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+32-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:26:5-82
+32-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:26:22-79
 33
-34    <application
-34-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:11:5-31:19
-35        android:allowBackup="true"
-35-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:12:9-35
-36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-36-->[androidx.core:core:1.12.0] C:\Users\Samskruti\.gradle\caches\transforms-3\cb14b552d4f83ae6caff760f5a3bc691\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
-37        android:debuggable="true"
-38        android:extractNativeLibs="false"
-39        android:icon="@android:drawable/ic_dialog_info"
-39-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:13:9-56
-40        android:label="Crypto App"
-40-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:14:9-35
-41        android:supportsRtl="true"
+34    <permission
+34-->[androidx.core:core:1.12.0] C:\Users\Samskruti\.gradle\caches\transforms-3\1e88d46d58572935c1885f46245e9d44\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+35        android:name="com.example.cryptoapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+35-->[androidx.core:core:1.12.0] C:\Users\Samskruti\.gradle\caches\transforms-3\1e88d46d58572935c1885f46245e9d44\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+36        android:protectionLevel="signature" />
+36-->[androidx.core:core:1.12.0] C:\Users\Samskruti\.gradle\caches\transforms-3\1e88d46d58572935c1885f46245e9d44\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+37
+38    <uses-permission android:name="com.example.cryptoapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+38-->[androidx.core:core:1.12.0] C:\Users\Samskruti\.gradle\caches\transforms-3\1e88d46d58572935c1885f46245e9d44\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+38-->[androidx.core:core:1.12.0] C:\Users\Samskruti\.gradle\caches\transforms-3\1e88d46d58572935c1885f46245e9d44\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+39
+40    <application
+40-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:14:5-50:19
+41        android:allowBackup="true"
 41-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:15:9-35
-42        android:testOnly="true"
-43        android:theme="@android:style/Theme.Material.Light.NoActionBar" >
-43-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:16:9-72
-44
-45        <!-- Required: Tells Google Play Services that this app uses the Wallet API -->
-46        <meta-data
-46-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:19:9-21:36
-47            android:name="com.google.android.gms.wallet.api.enabled"
-47-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:20:13-69
-48            android:value="true" />
-48-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:21:13-33
-49
-50        <activity
-50-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:22:9-30:20
-51            android:name="com.example.cryptoapp.MainActivity"
-51-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:23:13-41
-52            android:exported="true"
-52-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:24:13-36
-53            android:theme="@android:style/Theme.Material.Light.NoActionBar" >
-53-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:25:13-76
-54            <intent-filter>
-54-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:26:13-29:29
-55                <action android:name="android.intent.action.MAIN" />
-55-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:27:17-69
-55-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:27:25-66
-56
-57                <category android:name="android.intent.category.LAUNCHER" />
-57-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:28:17-77
-57-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:28:27-74
-58            </intent-filter>
-59        </activity>
-60        <!-- Needs to be explicitly declared on P+ -->
-61        <uses-library
-61-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\1cde36386c8263c2c6545a74a4b21247\transformed\play-services-maps-18.0.2\AndroidManifest.xml:39:9-41:40
-62            android:name="org.apache.http.legacy"
-62-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\1cde36386c8263c2c6545a74a4b21247\transformed\play-services-maps-18.0.2\AndroidManifest.xml:40:13-50
-63            android:required="false" />
-63-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\1cde36386c8263c2c6545a74a4b21247\transformed\play-services-maps-18.0.2\AndroidManifest.xml:41:13-37
-64
-65        <activity
-65-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Samskruti\.gradle\caches\transforms-3\a3d86223a33dd9a9a31e0156e501003d\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
-66            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-66-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Samskruti\.gradle\caches\transforms-3\a3d86223a33dd9a9a31e0156e501003d\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
-67            android:exported="false"
-67-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Samskruti\.gradle\caches\transforms-3\a3d86223a33dd9a9a31e0156e501003d\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
-68            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-68-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Samskruti\.gradle\caches\transforms-3\a3d86223a33dd9a9a31e0156e501003d\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
-69
-70        <meta-data
-70-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Samskruti\.gradle\caches\transforms-3\9acbab19960f4bf7a73b6f1350b1fa4b\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
-71            android:name="com.google.android.gms.version"
-71-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Samskruti\.gradle\caches\transforms-3\9acbab19960f4bf7a73b6f1350b1fa4b\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
-72            android:value="@integer/google_play_services_version" />
-72-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Samskruti\.gradle\caches\transforms-3\9acbab19960f4bf7a73b6f1350b1fa4b\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
-73
-74        <provider
-74-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\6f139a805f5ae608a766fe600ad51ca0\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-75            android:name="androidx.startup.InitializationProvider"
-75-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\6f139a805f5ae608a766fe600ad51ca0\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-76            android:authorities="com.example.cryptoapp.androidx-startup"
-76-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\6f139a805f5ae608a766fe600ad51ca0\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-77            android:exported="false" >
-77-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\6f139a805f5ae608a766fe600ad51ca0\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-78            <meta-data
-78-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\6f139a805f5ae608a766fe600ad51ca0\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-79                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-79-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\6f139a805f5ae608a766fe600ad51ca0\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-80                android:value="androidx.startup" />
-80-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\6f139a805f5ae608a766fe600ad51ca0\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-81            <meta-data
-81-->[androidx.lifecycle:lifecycle-process:2.8.0] C:\Users\Samskruti\.gradle\caches\transforms-3\4b5eac50af0f412cd7bb938ce193ec4c\transformed\lifecycle-process-2.8.0\AndroidManifest.xml:29:13-31:52
-82                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-82-->[androidx.lifecycle:lifecycle-process:2.8.0] C:\Users\Samskruti\.gradle\caches\transforms-3\4b5eac50af0f412cd7bb938ce193ec4c\transformed\lifecycle-process-2.8.0\AndroidManifest.xml:30:17-78
-83                android:value="androidx.startup" />
-83-->[androidx.lifecycle:lifecycle-process:2.8.0] C:\Users\Samskruti\.gradle\caches\transforms-3\4b5eac50af0f412cd7bb938ce193ec4c\transformed\lifecycle-process-2.8.0\AndroidManifest.xml:31:17-49
-84            <meta-data
-84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
-85                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
-86                android:value="androidx.startup" />
-86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
-87        </provider>
-88
-89        <receiver
-89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
-90            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-90-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
-91            android:directBootAware="false"
-91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
-92            android:enabled="true"
-92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
-93            android:exported="true"
-93-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
-94            android:permission="android.permission.DUMP" >
-94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
-95            <intent-filter>
-95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
-96                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-96-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
-96-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
-97            </intent-filter>
-98            <intent-filter>
-98-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
-99                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-99-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
-99-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
-100            </intent-filter>
-101            <intent-filter>
-101-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
-102                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-102-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
-102-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
-103            </intent-filter>
-104            <intent-filter>
-104-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
-105                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-105-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
-105-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\b77c4061a639c86ca817344a3b450633\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
-106            </intent-filter>
-107        </receiver>
-108    </application>
-109
-110</manifest>
+42        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+42-->[androidx.core:core:1.12.0] C:\Users\Samskruti\.gradle\caches\transforms-3\1e88d46d58572935c1885f46245e9d44\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+43        android:debuggable="true"
+44        android:extractNativeLibs="false"
+45        android:icon="@android:drawable/ic_dialog_info"
+45-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:16:9-56
+46        android:label="Crypto App"
+46-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:17:9-35
+47        android:supportsRtl="true"
+47-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:18:9-35
+48        android:testOnly="true"
+49        android:theme="@android:style/Theme.Material.Light.NoActionBar" >
+49-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:19:9-72
+50
+51        <!-- Required: Tells Google Play Services that this app uses the Wallet API -->
+52        <meta-data
+52-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:22:9-24:36
+53            android:name="com.google.android.gms.wallet.api.enabled"
+53-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:23:13-69
+54            android:value="true" />
+54-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:24:13-33
+55
+56        <!-- Firebase: default notification channel for background messages -->
+57        <meta-data
+57-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:27:9-29:51
+58            android:name="com.google.firebase.messaging.default_notification_channel_id"
+58-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:28:13-89
+59            android:value="crypto_push_channel" />
+59-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:29:13-48
+60
+61        <activity
+61-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:31:9-39:20
+62            android:name="com.example.cryptoapp.MainActivity"
+62-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:32:13-41
+63            android:exported="true"
+63-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:33:13-36
+64            android:theme="@android:style/Theme.Material.Light.NoActionBar" >
+64-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:34:13-76
+65            <intent-filter>
+65-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:35:13-38:29
+66                <action android:name="android.intent.action.MAIN" />
+66-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:36:17-69
+66-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:36:25-66
+67
+68                <category android:name="android.intent.category.LAUNCHER" />
+68-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:37:17-77
+68-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:37:27-74
+69            </intent-filter>
+70        </activity>
+71
+72        <!-- Firebase Cloud Messaging service -->
+73        <service
+73-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:42:9-48:19
+74            android:name="com.example.cryptoapp.MyFirebaseMessagingService"
+74-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:43:13-55
+75            android:exported="false" >
+75-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:44:13-37
+76            <intent-filter>
+76-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:45:13-47:29
+77                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+77-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:46:17-78
+77-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:46:25-75
+78            </intent-filter>
+79        </service>
+80
+81        <!-- Needs to be explicitly declared on P+ -->
+82        <uses-library
+82-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\231d78b8fffc521c9f58b8fa826600d4\transformed\play-services-maps-18.0.2\AndroidManifest.xml:39:9-41:40
+83            android:name="org.apache.http.legacy"
+83-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\231d78b8fffc521c9f58b8fa826600d4\transformed\play-services-maps-18.0.2\AndroidManifest.xml:40:13-50
+84            android:required="false" />
+84-->[com.google.android.gms:play-services-maps:18.0.2] C:\Users\Samskruti\.gradle\caches\transforms-3\231d78b8fffc521c9f58b8fa826600d4\transformed\play-services-maps-18.0.2\AndroidManifest.xml:41:13-37
+85
+86        <service
+86-->[com.google.firebase:firebase-messaging-ktx:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\0ff1e1f3e23d50962427d6074116073a\transformed\firebase-messaging-ktx-24.0.0\AndroidManifest.xml:23:9-29:19
+87            android:name="com.google.firebase.components.ComponentDiscoveryService"
+87-->[com.google.firebase:firebase-messaging-ktx:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\0ff1e1f3e23d50962427d6074116073a\transformed\firebase-messaging-ktx-24.0.0\AndroidManifest.xml:24:13-84
+88            android:directBootAware="true"
+88-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\ed416c00c1f61ed79201204b4c036ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:32:13-43
+89            android:exported="false" >
+89-->[com.google.firebase:firebase-messaging-ktx:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\0ff1e1f3e23d50962427d6074116073a\transformed\firebase-messaging-ktx-24.0.0\AndroidManifest.xml:25:13-37
+90            <meta-data
+90-->[com.google.firebase:firebase-messaging-ktx:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\0ff1e1f3e23d50962427d6074116073a\transformed\firebase-messaging-ktx-24.0.0\AndroidManifest.xml:26:13-28:85
+91                android:name="com.google.firebase.components:com.google.firebase.messaging.ktx.FirebaseMessagingLegacyRegistrar"
+91-->[com.google.firebase:firebase-messaging-ktx:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\0ff1e1f3e23d50962427d6074116073a\transformed\firebase-messaging-ktx-24.0.0\AndroidManifest.xml:27:17-129
+92                android:value="com.google.firebase.components.ComponentRegistrar" />
+92-->[com.google.firebase:firebase-messaging-ktx:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\0ff1e1f3e23d50962427d6074116073a\transformed\firebase-messaging-ktx-24.0.0\AndroidManifest.xml:28:17-82
+93            <meta-data
+93-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:57:13-59:85
+94                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
+94-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:58:17-122
+95                android:value="com.google.firebase.components.ComponentRegistrar" />
+95-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:59:17-82
+96            <meta-data
+96-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:60:13-62:85
+97                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+97-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:61:17-119
+98                android:value="com.google.firebase.components.ComponentRegistrar" />
+98-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:62:17-82
+99            <meta-data
+99-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\f312ee03cd2334315fe973b95e6c33c6\transformed\firebase-installations-18.0.0\AndroidManifest.xml:15:13-17:85
+100                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+100-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\f312ee03cd2334315fe973b95e6c33c6\transformed\firebase-installations-18.0.0\AndroidManifest.xml:16:17-130
+101                android:value="com.google.firebase.components.ComponentRegistrar" />
+101-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\f312ee03cd2334315fe973b95e6c33c6\transformed\firebase-installations-18.0.0\AndroidManifest.xml:17:17-82
+102            <meta-data
+102-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\f312ee03cd2334315fe973b95e6c33c6\transformed\firebase-installations-18.0.0\AndroidManifest.xml:18:13-20:85
+103                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+103-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\f312ee03cd2334315fe973b95e6c33c6\transformed\firebase-installations-18.0.0\AndroidManifest.xml:19:17-127
+104                android:value="com.google.firebase.components.ComponentRegistrar" />
+104-->[com.google.firebase:firebase-installations:18.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\f312ee03cd2334315fe973b95e6c33c6\transformed\firebase-installations-18.0.0\AndroidManifest.xml:20:17-82
+105            <meta-data
+105-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\5d42a80af219ed5294fc47d4fe03e35c\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:12:13-14:85
+106                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+106-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\5d42a80af219ed5294fc47d4fe03e35c\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:13:17-116
+107                android:value="com.google.firebase.components.ComponentRegistrar" />
+107-->[com.google.firebase:firebase-common-ktx:21.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\5d42a80af219ed5294fc47d4fe03e35c\transformed\firebase-common-ktx-21.0.0\AndroidManifest.xml:14:17-82
+108            <meta-data
+108-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\ed416c00c1f61ed79201204b4c036ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:35:13-37:85
+109                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+109-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\ed416c00c1f61ed79201204b4c036ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:36:17-109
+110                android:value="com.google.firebase.components.ComponentRegistrar" />
+110-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\ed416c00c1f61ed79201204b4c036ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:37:17-82
+111            <meta-data
+111-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\Samskruti\.gradle\caches\transforms-3\17e01a6a303d40b96776a292a034726d\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:25:13-27:85
+112                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+112-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\Samskruti\.gradle\caches\transforms-3\17e01a6a303d40b96776a292a034726d\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:26:17-115
+113                android:value="com.google.firebase.components.ComponentRegistrar" />
+113-->[com.google.firebase:firebase-datatransport:18.2.0] C:\Users\Samskruti\.gradle\caches\transforms-3\17e01a6a303d40b96776a292a034726d\transformed\firebase-datatransport-18.2.0\AndroidManifest.xml:27:17-82
+114        </service>
+115
+116        <receiver
+116-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:29:9-40:20
+117            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+117-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:30:13-78
+118            android:exported="true"
+118-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:31:13-36
+119            android:permission="com.google.android.c2dm.permission.SEND" >
+119-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:32:13-73
+120            <intent-filter>
+120-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:33:13-35:29
+121                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+121-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:34:17-81
+121-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:34:25-78
+122            </intent-filter>
+123
+124            <meta-data
+124-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:37:13-39:40
+125                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
+125-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:38:17-92
+126                android:value="true" />
+126-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:39:17-37
+127        </receiver>
+128        <!--
+129             FirebaseMessagingService performs security checks at runtime,
+130             but set to not exported to explicitly avoid allowing another app to call it.
+131        -->
+132        <service
+132-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:46:9-53:19
+133            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+133-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:47:13-82
+134            android:directBootAware="true"
+134-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:48:13-43
+135            android:exported="false" >
+135-->[com.google.firebase:firebase-messaging:24.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\159803a080a5ac8b20cd65c1133904af\transformed\firebase-messaging-24.0.0\AndroidManifest.xml:49:13-37
+136            <intent-filter android:priority="-500" >
+136-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:45:13-47:29
+137                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+137-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:46:17-78
+137-->C:\Users\Samskruti\Downloads\Devops\KMP Crypto App\androidApp\src\main\AndroidManifest.xml:46:25-75
+138            </intent-filter>
+139        </service>
+140
+141        <activity
+141-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Samskruti\.gradle\caches\transforms-3\1c8196db39fa3e537d69523b07787283\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:9-173
+142            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+142-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Samskruti\.gradle\caches\transforms-3\1c8196db39fa3e537d69523b07787283\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:19-85
+143            android:exported="false"
+143-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Samskruti\.gradle\caches\transforms-3\1c8196db39fa3e537d69523b07787283\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:146-170
+144            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+144-->[com.google.android.gms:play-services-base:18.5.0] C:\Users\Samskruti\.gradle\caches\transforms-3\1c8196db39fa3e537d69523b07787283\transformed\play-services-base-18.5.0\AndroidManifest.xml:5:86-145
+145
+146        <provider
+146-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\ed416c00c1f61ed79201204b4c036ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:23:9-28:39
+147            android:name="com.google.firebase.provider.FirebaseInitProvider"
+147-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\ed416c00c1f61ed79201204b4c036ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:24:13-77
+148            android:authorities="com.example.cryptoapp.firebaseinitprovider"
+148-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\ed416c00c1f61ed79201204b4c036ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:25:13-72
+149            android:directBootAware="true"
+149-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\ed416c00c1f61ed79201204b4c036ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:26:13-43
+150            android:exported="false"
+150-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\ed416c00c1f61ed79201204b4c036ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:27:13-37
+151            android:initOrder="100" />
+151-->[com.google.firebase:firebase-common:21.0.0] C:\Users\Samskruti\.gradle\caches\transforms-3\ed416c00c1f61ed79201204b4c036ef7\transformed\firebase-common-21.0.0\AndroidManifest.xml:28:13-36
+152        <provider
+152-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\bee576b422991de1f902abd73eec2b2e\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+153            android:name="androidx.startup.InitializationProvider"
+153-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\bee576b422991de1f902abd73eec2b2e\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+154            android:authorities="com.example.cryptoapp.androidx-startup"
+154-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\bee576b422991de1f902abd73eec2b2e\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+155            android:exported="false" >
+155-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\bee576b422991de1f902abd73eec2b2e\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+156            <meta-data
+156-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\bee576b422991de1f902abd73eec2b2e\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+157                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+157-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\bee576b422991de1f902abd73eec2b2e\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+158                android:value="androidx.startup" />
+158-->[androidx.emoji2:emoji2:1.3.0] C:\Users\Samskruti\.gradle\caches\transforms-3\bee576b422991de1f902abd73eec2b2e\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+159            <meta-data
+159-->[androidx.lifecycle:lifecycle-process:2.8.0] C:\Users\Samskruti\.gradle\caches\transforms-3\3bbbba95e2c2d76ae077f595bdbfa17d\transformed\lifecycle-process-2.8.0\AndroidManifest.xml:29:13-31:52
+160                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+160-->[androidx.lifecycle:lifecycle-process:2.8.0] C:\Users\Samskruti\.gradle\caches\transforms-3\3bbbba95e2c2d76ae077f595bdbfa17d\transformed\lifecycle-process-2.8.0\AndroidManifest.xml:30:17-78
+161                android:value="androidx.startup" />
+161-->[androidx.lifecycle:lifecycle-process:2.8.0] C:\Users\Samskruti\.gradle\caches\transforms-3\3bbbba95e2c2d76ae077f595bdbfa17d\transformed\lifecycle-process-2.8.0\AndroidManifest.xml:31:17-49
+162            <meta-data
+162-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+163                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+163-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+164                android:value="androidx.startup" />
+164-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+165        </provider>
+166
+167        <meta-data
+167-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Samskruti\.gradle\caches\transforms-3\78aacc03b9610f3bafff63c0a087a043\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:9-122
+168            android:name="com.google.android.gms.version"
+168-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Samskruti\.gradle\caches\transforms-3\78aacc03b9610f3bafff63c0a087a043\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:20-65
+169            android:value="@integer/google_play_services_version" />
+169-->[com.google.android.gms:play-services-basement:18.4.0] C:\Users\Samskruti\.gradle\caches\transforms-3\78aacc03b9610f3bafff63c0a087a043\transformed\play-services-basement-18.4.0\AndroidManifest.xml:6:66-119
+170
+171        <receiver
+171-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+172            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+172-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+173            android:directBootAware="false"
+173-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+174            android:enabled="true"
+174-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+175            android:exported="true"
+175-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+176            android:permission="android.permission.DUMP" >
+176-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+177            <intent-filter>
+177-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+178                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+178-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+178-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+179            </intent-filter>
+180            <intent-filter>
+180-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+181                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+181-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+181-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+182            </intent-filter>
+183            <intent-filter>
+183-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+184                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+184-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+184-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+185            </intent-filter>
+186            <intent-filter>
+186-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+187                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+187-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+187-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\Samskruti\.gradle\caches\transforms-3\6e96d9386cfa62379e9e14cf17ad1ce9\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+188            </intent-filter>
+189        </receiver>
+190
+191        <service
+191-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\Samskruti\.gradle\caches\transforms-3\78d76ec71ffc80f5e1e41eb6b17f8535\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:28:9-34:19
+192            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+192-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\Samskruti\.gradle\caches\transforms-3\78d76ec71ffc80f5e1e41eb6b17f8535\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:29:13-103
+193            android:exported="false" >
+193-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\Samskruti\.gradle\caches\transforms-3\78d76ec71ffc80f5e1e41eb6b17f8535\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:30:13-37
+194            <meta-data
+194-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\Samskruti\.gradle\caches\transforms-3\78d76ec71ffc80f5e1e41eb6b17f8535\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:31:13-33:39
+195                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+195-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\Samskruti\.gradle\caches\transforms-3\78d76ec71ffc80f5e1e41eb6b17f8535\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:32:17-94
+196                android:value="cct" />
+196-->[com.google.android.datatransport:transport-backend-cct:3.1.9] C:\Users\Samskruti\.gradle\caches\transforms-3\78d76ec71ffc80f5e1e41eb6b17f8535\transformed\transport-backend-cct-3.1.9\AndroidManifest.xml:33:17-36
+197        </service>
+198        <service
+198-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\Samskruti\.gradle\caches\transforms-3\29c57e12ad68db72b3275db84ce35eae\transformed\transport-runtime-3.1.9\AndroidManifest.xml:26:9-30:19
+199            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+199-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\Samskruti\.gradle\caches\transforms-3\29c57e12ad68db72b3275db84ce35eae\transformed\transport-runtime-3.1.9\AndroidManifest.xml:27:13-117
+200            android:exported="false"
+200-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\Samskruti\.gradle\caches\transforms-3\29c57e12ad68db72b3275db84ce35eae\transformed\transport-runtime-3.1.9\AndroidManifest.xml:28:13-37
+201            android:permission="android.permission.BIND_JOB_SERVICE" >
+201-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\Samskruti\.gradle\caches\transforms-3\29c57e12ad68db72b3275db84ce35eae\transformed\transport-runtime-3.1.9\AndroidManifest.xml:29:13-69
+202        </service>
+203
+204        <receiver
+204-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\Samskruti\.gradle\caches\transforms-3\29c57e12ad68db72b3275db84ce35eae\transformed\transport-runtime-3.1.9\AndroidManifest.xml:32:9-34:40
+205            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+205-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\Samskruti\.gradle\caches\transforms-3\29c57e12ad68db72b3275db84ce35eae\transformed\transport-runtime-3.1.9\AndroidManifest.xml:33:13-132
+206            android:exported="false" />
+206-->[com.google.android.datatransport:transport-runtime:3.1.9] C:\Users\Samskruti\.gradle\caches\transforms-3\29c57e12ad68db72b3275db84ce35eae\transformed\transport-runtime-3.1.9\AndroidManifest.xml:34:13-37
+207    </application>
+208
+209</manifest>

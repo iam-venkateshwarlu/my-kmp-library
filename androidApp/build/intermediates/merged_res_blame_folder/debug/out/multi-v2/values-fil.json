@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.cryptoapp.androidApp-mergeDebugResources-44:/values-fil/values-fil.xml",
+            "outputFile": "com.example.cryptoapp.androidApp-mergeDebugResources-47:/values-fil/values-fil.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Samskruti\\.gradle\\caches\\transforms-3\\3145c8e77852974ec5c3d6bbc5d1a9a1\\transformed\\play-services-wallet-19.4.0\\res\\values-fil\\values.xml",
+                    "source": "C:\\Users\\Samskruti\\.gradle\\caches\\transforms-3\\86ec83b1a57a736ce7a213c07c83c79d\\transformed\\play-services-wallet-19.4.0\\res\\values-fil\\values.xml",
                     "from": {
                         "startLines": "4,5",
                         "startColumns": "0,0",

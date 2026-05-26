@@ -1,6 +1,15 @@
 package ui
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -25,6 +34,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.coroutines.delay
+import notification.PushNotificationEvent
 import payment.PaymentState
 import viewmodel.CryptoViewModel
 
@@ -36,8 +47,9 @@ import viewmodel.CryptoViewModel
  *  - Display a "Pay with Google Pay" button section
  *  - Show a loading spinner while the UPI app is open
  *  - Show a success / error result card when the UPI app returns
+ *  - Show an animated in-app banner when a push notification arrives
  *
- * @param vm          Shared ViewModel holding quote + payment state
+ * @param vm          Shared ViewModel holding quote + payment + notification state
  * @param onPayClick  Platform callback to launch the UPI Intent (Android only).
  *                    Defaults to empty lambda so iOS compiles without changes.
  */
@@ -46,163 +58,243 @@ fun CryptoScreen(
     vm: CryptoViewModel,
     onPayClick: () -> Unit = {}
 ) {
-    val data         = vm.state
-    val paymentState = vm.paymentState
-    val scrollState  = rememberScrollState()
+    val data              = vm.state
+    val paymentState      = vm.paymentState
+    val notificationEvent = vm.notificationEvent
+    val scrollState       = rememberScrollState()
 
     // Load the crypto quote once when the screen enters composition
     LaunchedEffect(Unit) {
         vm.loadQuote()
     }
 
-    Column(
-        modifier             = Modifier
-            .fillMaxSize()
-            .verticalScroll(scrollState)
-            .padding(16.dp),
-        horizontalAlignment  = Alignment.CenterHorizontally
-    ) {
-
-        // ── Existing crypto quote section ──────────────────────────────────────
-
-        Text(
-            text       = "Buy Crypto",
-            fontSize   = 22.sp,
-            fontWeight = FontWeight.Bold
-        )
-
-        Spacer(Modifier.height(16.dp))
-
-        if (data != null) {
-            Text("Fiat: ${data.fiat}")
-            Text("Crypto: ${data.crypto}")
-            Text("Amount: ${data.amount}")
-            Text("Receive: ${data.cryptoAmount}")
-
-            Spacer(Modifier.height(12.dp))
-
-            Button(onClick = {}) {
-                Text("Buy Now")
-            }
-        } else {
-            // Quote is still loading
-            CircularProgressIndicator()
+    // Auto-dismiss the notification banner after 4 seconds
+    LaunchedEffect(notificationEvent) {
+        if (notificationEvent != null) {
+            delay(4_000)
+            vm.dismissNotification()
         }
+    }
 
-        // ── Divider separating existing content from payment section ──────────
+    Box(modifier = Modifier.fillMaxSize()) {
 
-        Spacer(Modifier.height(32.dp))
-        HorizontalDivider()
-        Spacer(Modifier.height(24.dp))
+        Column(
+            modifier            = Modifier
+                .fillMaxSize()
+                .verticalScroll(scrollState)
+                .padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
 
-        // ── Payment section ────────────────────────────────────────────────────
+            // ── Existing crypto quote section ──────────────────────────────────
 
-        Text(
-            text       = "Payments",
-            fontSize   = 18.sp,
-            fontWeight = FontWeight.SemiBold
-        )
+            Text(
+                text       = "Buy Crypto",
+                fontSize   = 22.sp,
+                fontWeight = FontWeight.Bold
+            )
 
-        Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(16.dp))
 
-        when (paymentState) {
+            if (data != null) {
+                Text("Fiat: ${data.fiat}")
+                Text("Crypto: ${data.crypto}")
+                Text("Amount: ${data.amount}")
+                Text("Receive: ${data.cryptoAmount}")
 
-            // UPI intent is open — show spinner + message
-            is PaymentState.Loading -> {
+                Spacer(Modifier.height(12.dp))
+
+                Button(onClick = {}) {
+                    Text("Buy Now")
+                }
+            } else {
+                // Quote is still loading
                 CircularProgressIndicator()
-                Spacer(Modifier.height(10.dp))
-                Text(
-                    text  = "Opening payment app…",
-                    color = Color.Gray,
-                    fontSize = 14.sp
-                )
             }
 
-            // Payment succeeded — show green result card
-            is PaymentState.Success -> {
-                PaymentResultCard(
-                    message   = paymentState.result.message ?: "Payment Successful",
-                    isSuccess = true,
-                    onDismiss = { vm.resetPaymentState() }
-                )
-            }
+            // ── Divider separating existing content from payment section ──────
 
-            // Payment failed or cancelled — show red result card
-            is PaymentState.Error -> {
-                PaymentResultCard(
-                    message   = paymentState.message,
-                    isSuccess = false,
-                    onDismiss = { vm.resetPaymentState() }
-                )
-            }
+            Spacer(Modifier.height(32.dp))
+            HorizontalDivider()
+            Spacer(Modifier.height(24.dp))
 
-            // Default idle state — show the Pay button
-            is PaymentState.Idle -> {
-                Button(
-                    onClick = {
-                        vm.startPayment()   // transition to Loading
-                        onPayClick()        // platform fires the UPI Intent
-                    },
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFF1a73e8)  // Google Blue
-                    ),
-                    shape    = RoundedCornerShape(12.dp),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(52.dp)
-                ) {
+            // ── Payment section ────────────────────────────────────────────────
+
+            Text(
+                text       = "Payments",
+                fontSize   = 18.sp,
+                fontWeight = FontWeight.SemiBold
+            )
+
+            Spacer(Modifier.height(16.dp))
+
+            when (paymentState) {
+
+                // UPI intent is open — show spinner + message
+                is PaymentState.Loading -> {
+                    CircularProgressIndicator()
+                    Spacer(Modifier.height(10.dp))
                     Text(
-                        text       = "Buy with Google Pay",
-                        fontSize   = 16.sp,
-                        fontWeight = FontWeight.Bold,
-                        color      = Color.White
+                        text     = "Opening payment app…",
+                        color    = Color.Gray,
+                        fontSize = 14.sp
                     )
                 }
-            }
-        }
 
-        // ── Saved Cards section ────────────────────────────────────────────────
+                // Payment succeeded — show green result card
+                is PaymentState.Success -> {
+                    PaymentResultCard(
+                        message   = paymentState.result.message ?: "Payment Successful",
+                        isSuccess = true,
+                        onDismiss = { vm.resetPaymentState() }
+                    )
+                }
 
-        Spacer(Modifier.height(32.dp))
-        HorizontalDivider()
-        Spacer(Modifier.height(24.dp))
+                // Payment failed or cancelled — show red result card
+                is PaymentState.Error -> {
+                    PaymentResultCard(
+                        message   = paymentState.message,
+                        isSuccess = false,
+                        onDismiss = { vm.resetPaymentState() }
+                    )
+                }
 
-        Text(
-            text       = "Your Cards",
-            fontSize   = 18.sp,
-            fontWeight = FontWeight.SemiBold
-        )
-
-        Spacer(Modifier.height(16.dp))
-
-        if (vm.showAddCardForm) {
-            AddCardForm(
-                onSave = { vm.saveCard(it) },
-                onCancel = { vm.onDismissAddCard() }
-            )
-        } else {
-            vm.savedCards.forEach { card ->
-                Card(
-                    modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
-                    shape = RoundedCornerShape(8.dp)
-                ) {
-                    Column(Modifier.padding(12.dp)) {
-                        Text(card.cardBrand.displayName, fontWeight = FontWeight.Bold)
-                        Text(card.maskedNumber)
-                        Text("Expires: ${card.expiry}", fontSize = 12.sp, color = Color.Gray)
+                // Default idle state — show the Pay button
+                is PaymentState.Idle -> {
+                    Button(
+                        onClick = {
+                            vm.startPayment()   // transition to Loading
+                            onPayClick()        // platform fires the UPI Intent
+                        },
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = Color(0xFF1a73e8)  // Google Blue
+                        ),
+                        shape    = RoundedCornerShape(12.dp),
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(52.dp)
+                    ) {
+                        Text(
+                            text       = "Buy with Google Pay",
+                            fontSize   = 16.sp,
+                            fontWeight = FontWeight.Bold,
+                            color      = Color.White
+                        )
                     }
                 }
             }
 
-            Spacer(Modifier.height(8.dp))
+            // ── Saved Cards section ────────────────────────────────────────────
 
-            Button(
-                onClick = { vm.onAddCardClick() },
-                modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(12.dp)
-            ) {
-                Text("Add New Card")
+            Spacer(Modifier.height(32.dp))
+            HorizontalDivider()
+            Spacer(Modifier.height(24.dp))
+
+            Text(
+                text       = "Your Cards",
+                fontSize   = 18.sp,
+                fontWeight = FontWeight.SemiBold
+            )
+
+            Spacer(Modifier.height(16.dp))
+
+            if (vm.showAddCardForm) {
+                AddCardForm(
+                    onSave   = { vm.saveCard(it) },
+                    onCancel = { vm.onDismissAddCard() }
+                )
+            } else {
+                vm.savedCards.forEach { card ->
+                    Card(
+                        modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
+                        shape    = RoundedCornerShape(8.dp)
+                    ) {
+                        Column(Modifier.padding(12.dp)) {
+                            Text(card.cardBrand.displayName, fontWeight = FontWeight.Bold)
+                            Text(card.maskedNumber)
+                            Text("Expires: ${card.expiry}", fontSize = 12.sp, color = Color.Gray)
+                        }
+                    }
+                }
+
+                Spacer(Modifier.height(8.dp))
+
+                Button(
+                    onClick  = { vm.onAddCardClick() },
+                    modifier = Modifier.fillMaxWidth(),
+                    shape    = RoundedCornerShape(12.dp)
+                ) {
+                    Text("Add New Card")
+                }
             }
+        }
+
+        // ── In-app push notification banner (overlaid at the top) ──────────────
+
+        AnimatedVisibility(
+            visible = notificationEvent != null,
+            enter   = fadeIn() + slideInVertically(initialOffsetY = { -it }),
+            exit    = fadeOut() + slideOutVertically(targetOffsetY = { -it }),
+            modifier = Modifier.align(Alignment.TopCenter)
+        ) {
+            notificationEvent?.let { event ->
+                NotificationBanner(
+                    event     = event,
+                    onDismiss = { vm.dismissNotification() }
+                )
+            }
+        }
+    }
+}
+
+/**
+ * Floating banner displayed at the top of the screen when a foreground
+ * FCM push notification is received.
+ *
+ * Tapping the "×" button or waiting 4 seconds dismisses it automatically.
+ */
+@Composable
+private fun NotificationBanner(
+    event: PushNotificationEvent,
+    onDismiss: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 12.dp, vertical = 8.dp),
+        shape  = RoundedCornerShape(12.dp),
+        colors = CardDefaults.cardColors(containerColor = Color(0xFF1E293B)),
+        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+    ) {
+        Row(
+            modifier            = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 12.dp),
+            verticalAlignment   = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text       = "🔔 ${event.title}",
+                    fontWeight = FontWeight.Bold,
+                    fontSize   = 14.sp,
+                    color      = Color.White
+                )
+                Spacer(Modifier.height(2.dp))
+                Text(
+                    text     = event.body,
+                    fontSize = 13.sp,
+                    color    = Color(0xFFCBD5E1)
+                )
+            }
+            Text(
+                text     = "×",
+                fontSize = 20.sp,
+                color    = Color.White,
+                modifier = Modifier
+                    .padding(start = 12.dp)
+                    .clickable(onClick = onDismiss)
+            )
         }
     }
 }
