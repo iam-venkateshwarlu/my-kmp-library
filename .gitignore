@@ -1,0 +1,29 @@
+# Gradle
+.gradle/
+build/
+**/build/
+
+# Kotlin
+*.kotlin_module
+
+# Android
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# IntelliJ / Android Studio
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+
+# iOS / KMP
+*.framework
+*.xcframework
+iosApp/Pods/
+iosApp/Podfile.lock
+
+# Xcode
+DerivedData/
